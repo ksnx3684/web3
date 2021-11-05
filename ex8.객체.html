@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Object</h1>
+    <h2>Create</h2>
+    <script>
+      var coworkers = {
+        "programmer":"LeeBH",
+        "designer":"Byeonghun"
+      };
+      document.write("programmer : "+coworkers.programmer+"<br>");
+      document.write("designer : "+coworkers.designer+"<br>");
+
+      coworkers.bookkeeper = "duru"; // 객체에 추가
+      document.write("bookkeeper : "+coworkers.bookkeeper+"<br>");
+
+      coworkers.data_scientist = "LBH"; // underbar
+      document.write("data_scientist : "+coworkers.data_scientist+"<br>");
+
+      coworkers["frontend master"] = "LeeByeongHun"; // 공백있는 요소
+      document.write("frontend master : "+coworkers["frontend master"]+"<br>");
+
+      var countries = {};
+      countries.asia = "Korea";
+      countries.europe = "United Kingdom";
+      document.write("Asia : "+countries.asia+"<br>");
+      document.write("Europe : "+countries.europe+"<br>");
+    </script>
+    <h2>Iterate</h2>
+    <script>
+      for(var key in coworkers){
+        document.write(key+' : '+coworkers[key]+'<br>');
+      }
+      for(var key in countries){
+        document.write(key+' : '+countries[key]+'<br>');
+      }
+    </script>
+    <h2>Property & Method</h2>
+    <script>
+      coworkers.showAll = function(){
+        for(var key in this){
+          if(key === "programmer" || key === "designer"){
+            document.write(key+' : '+this[key]+'<br>');
+          }
+        }
+      }
+      countries.showAll = function(){
+        for(var key in this){
+          if(key === "asia"){
+          document.write(key+' : '+this[key]+'<br>');
+          }
+        }
+      }
+      coworkers.showAll();
+      countries.showAll();
+    </script>
+  </body>
+</html>
