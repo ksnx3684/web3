@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+        // 배열 생성
+        var memberArray = ['LBH', 'Byeonghun', 'Lee'];
+        console.log("memberArray[1]", memberArray[1]);
+        // 객체 생성
+        var memberObject = {
+          manager:'LBH',
+          developer:'Byeonghun',
+          designer:'Lee'
+        }
+        memberObject.designer = 'LeeBH'; // 객체 수정 또는 추가
+        //객체는 .으로도 접근 할 수 있고, 배열처럼 []를 사용하여 접근 할 수 도 있다.
+        console.log("memberObject.designer", memberObject.designer);
+        console.log("memberObject['designer']", memberObject['designer']);
+        delete memberObject.manager; // 객체 삭제
+        console.log('after delete memberObject.manager', memberObject.manager);
+    </script>
+  </body>
+</html>

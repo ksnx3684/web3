@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      console.log("Math.PI", Math.PI);
+      console.log("Math.random", Math.random()); // 객체에 소속되어 있는 함수 : method
+      console.log("Math.floor(3.9)", Math.floor(3.9));
+
+      // 객체를 사용하여 정의
+      var MyMath = {
+        PI:Math.PI,
+        random:function(){
+          return Math.random();
+        },
+        floor:function(val){
+          return Math.floor(val);
+        }
+      }
+      // 출력
+      console.log("MyMath.PI", MyMath.PI);
+      console.log("MyMath.random()", MyMath.random());
+      console.log("MyMath.floor()", MyMath.floor(3.9));
+
+      // 객체를 사용하지 않고 정의
+      var MyMath_PI = Math.PI;
+      function MyMath_random() {
+        return Math.random();
+      }
+      function MyMath_floor(val) {
+        return Math.floor(val);
+      }
+    </script>
+  </body>
+</html>
