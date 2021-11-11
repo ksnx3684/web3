@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      function Person(name, first, second, third){
+        this.name = name;
+        this.first = first;
+        this.second = second;
+        this.third = third;
+        this.sum = function(){
+          return this.first + this.second + this.third;
+        }
+      }
+      // 생성자(constructor) : 객체를 생성하는 함수. 생성자를 이용하면 객체를 새로 생성할 때마다 그 속상값을 일일히 정의해 주지 않아도 된다. 그냥 함수를 호출할 경우 일반함수로 취급되나 new 키워드를 붙일경우 객체를 생성하는 생성자가 된다.
+      var kim = new Person('kim', 10, 20, 30);
+      var lee = new Person('lee', 10, 10, 10);
+      console.log(kim.sum());
+      console.log(lee.sum());
+
+      var d1 = new Date('2021-11-11'); // new 키워드를 사용하여 2021년 11월 11일의 값을 가지는 Date 객체를 생성
+      console.log(d1.getFullYear()); // 해당 객체의 년도를 출력
+      console.log(d1.getMonth()); // 0부터 카운트하여 해당 객체의 월을 출력
+
+      console.log(Date);
+
+    </script>
+  </body>
+</html>
