@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      class Person{
+        constructor(name, first, second){
+          this.name = name;
+          this.first = first;
+          this.second = second;
+        }
+        sum(){
+          return this.first + this.second;
+        }
+      }
+      // 상속이란 부모 메서드의 속성을 자식 메서드에게 물려주는 것을 의미한다.
+      class PersonPlus extends Person{ // extends를 사용하여 상속을 구현한다.
+        constructor(name, first, second, third){
+          super(name, first, second); // 부모 클래스의 생성자 호출
+          this.third = third;
+        }
+        sum(){
+          return super.sum()+this.third; // 부모 클래스의 메서드 + this.third = 값
+        }
+        avg(){
+          return (this.first+this.second+this.third)/3;
+        }
+      }
+
+        var kim = new PersonPlus('kim', 10, 20, 30);
+        console.log(kim.sum());
+        console.log(kim.avg());
+
+    </script>
+  </body>
+</html>
