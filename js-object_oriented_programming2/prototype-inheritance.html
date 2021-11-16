@@ -8,11 +8,13 @@
     <script>
       var superObj = {superVal:'super'};
       var subObj = {subVal:'sub'};
-      subObj.__proto__ = superObj; // __proto__를 통해 subObj가 superObj의 자식속성이라고 정의할 수 있다.
+      subObj.__proto__ = superObj;
+      // __proto__ 는 어떤 객체가 자체적으로 갖고 있지 않는 값을 사용하기 위해 다른 객체에서 불러오는 함수를 말한다.
+      // __proto__를 통해 subObj가 superObj의 자식속성이라고 정의할 수 있다.
       // prototype은 원형 메소드를 정의, __proto__는 특정 객체의 속성을 자식으로서 상속 받게함.
       console.log('subObj.subVal =>', subObj.subVal);
       console.log('subObj.superVal =>', subObj.superVal);
-      subObj.superVal= 'sub'; // 객체의 값을 바꿔도 __proto__가 가리키고 있는 객체의 속 성이 변하지는 않는다.
+      subObj.superVal= 'sub'; // 객체의 값을 바꿔도 __proto__가 가리키고 있는 객체의 속성이 변하지는 않는다.
       console.log('superObj.superVal =>', superObj.superVal);
 
       var subObj = Object.create(superObj); // subObj를 superObj를 부모로 하는 새로운 객체로 정의
