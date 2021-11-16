@@ -6,6 +6,7 @@
   </head>
   <body>
     <script>
+      // 클래스를 사용하지 않고 구현하는 법
       function Person(name, first, second){
         this.name = name;
         this.first = first;
@@ -18,8 +19,8 @@
         Person.call(this,name,first,second);
         this.third = third;
       }
-      //PersonPlus.prototype.__proto__ = Person.prototype;
-      PersonPlus.prototype = Object.create(Person.prototype);
+      //PersonPlus.prototype.__proto__ = Person.prototype; // proto도 동작은 하지만 비표준 방식이기 때문에,
+      PersonPlus.prototype = Object.create(Person.prototype); // Object.create 방식을 권장한다.
       PersonPlus.prototype.constructor = PersonPlus;
       PersonPlus.prototype.avg = function(){
         return(this.first+this.second+this.third)/3;
